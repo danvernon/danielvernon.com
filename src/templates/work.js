@@ -10,6 +10,7 @@ class WorkItemsTemplate extends Component {
             <div>
                 {/* <h1 dangerouslySetInnerHTML={{ __html: post.title }} /> */}
                 {/* <div dangerouslySetInnerHTML={{ __html: post.content }} /> */}
+
                 Title
             </div>
         )

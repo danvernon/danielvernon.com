@@ -17,6 +17,7 @@ class PostsTemplate extends Component {
           <div key={node.id} className='post' style={{ marginBottom: 50 }}>
             <Link to={'/posts/' + node.slug}>
               <h3>{node.title}</h3>
+              <img src={node.featured_media.source_url} />
             </Link>
             <div className='post-content' dangerouslySetInnerHTML={{__html: node.excerpt}} />
             {node.date}
@@ -46,6 +47,9 @@ export const pageQuery = graphql`
                     excerpt
                     slug
                     date(formatString: "MMMM DD, YYYY")
+                    featured_media {
+                      source_url
+                    }
                 }
             }
         }

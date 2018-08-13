@@ -21,6 +21,12 @@ module.exports = `
                     status
                     template
                     format
+                    title
+                    date
+                    excerpt
+                    featured_media {
+                      source_url
+                    }
                 }
             }
         }
@@ -30,7 +36,7 @@ module.exports = `
                 node {
                     id
                     title
-                    
+
                     slug
                     featured_media {
                         source_url
