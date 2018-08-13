@@ -13,7 +13,7 @@ class MainMenu extends Component {
                   <ul>
                     {data.map((item) =>
                         <li key={item.object_slug}>
-                            <Link to={item.object_slug}>
+                            <Link to={"/" + item.object_slug}>
                                 {item.title}
                             </Link>
                         </li>

@@ -5,6 +5,8 @@ const IndexPage = () => (
   <div>
     <h1>Hello World</h1>
     <Link to="/posts/">Go to posts</Link>
+    <br />
+    <Link to="/work/">Go to work posts</Link>
   </div>
 )
 

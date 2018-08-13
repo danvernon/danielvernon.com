@@ -8,6 +8,7 @@ class WorkItemsTemplate extends Component {
 
         return (
             <div>
+              <img src={post.featured_media.source_url} />
                 {/* <h1 dangerouslySetInnerHTML={{ __html: post.title }} /> */}
                 {/* <div dangerouslySetInnerHTML={{ __html: post.content }} /> */}
 
