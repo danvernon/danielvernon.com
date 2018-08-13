@@ -3,9 +3,10 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 import Header from '../components/Header'
+import MainMenu from '../components/Menu/MainMenu'
 import './index.scss'
 
-const TemplateWrapper = ({ children }) => (
+const TemplateWrapper = ({ children, data }) => (
   <div>
     <Helmet
       title="Daniel Vernon - Designer"
@@ -23,6 +24,7 @@ const TemplateWrapper = ({ children }) => (
         paddingTop: 0,
       }}
     >
+      <MainMenu menu={data}/>
       {children()}
     </div>
   </div>
@@ -33,3 +35,21 @@ TemplateWrapper.propTypes = {
 }
 
 export default TemplateWrapper
+
+export const query = graphql`
+  query LayoutQuery {
+    allWordpressWpApiMenusMenusItems {
+      edges {
+        node {
+          id
+          name
+          items {
+            title
+            url
+            object_slug
+          }
+        }
+      }
+    }
+  }
+`
