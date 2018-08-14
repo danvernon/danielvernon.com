@@ -6,7 +6,6 @@ class WorkItemsTemplate extends Component {
   render() {
     const post = this.props.data.allWordpressWpWork.edges[0].node
     const resolutions = post.acf.project_featured_image.localFile.childImageSharp.resolutions
-    // const resolutions2 = post.acf.section_one_gallery.localFile.childImageSharp.resolutions
 
     return (
       <div>
@@ -71,7 +70,8 @@ class WorkItemsTemplate extends Component {
             </div>
           </div>
           <div className='section'>
-            {/* { post.acf.section_one_gallery !== null && } */}
+
+            { console.log(post.acf.section_one_gallery) }
 
           </div>
         </div>
@@ -115,6 +115,7 @@ export const pageQuery = graphql`
             project_link
             project_link_title
             section_one_gallery {
+              source_url
               id
               localFile {
                 childImageSharp {

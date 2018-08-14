@@ -20,7 +20,8 @@ html {
    * that they scale up/down from the base font size set against the body.
    */
   font-size: 13px;
-
+  scroll-behavior: smooth;
+  
   @include media-tablet() {
     font-size: 14px;
   }
