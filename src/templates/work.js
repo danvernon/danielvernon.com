@@ -4,7 +4,7 @@ import Img from "gatsby-image"
 
 class WorkItemsTemplate extends Component {
   render() {
-    const post = this.props.data.allWordpressWpWork.edges[0].node
+    const post = this.props.data.wordpressWpWork
     const resolutions = post.acf.project_featured_image.localFile.childImageSharp.resolutions
 
     return (
@@ -71,7 +71,7 @@ class WorkItemsTemplate extends Component {
           </div>
           <div className='section'>
 
-            { console.log(post.acf.section_one_gallery) }
+            {/* { console.log(post.acf.section_one_gallery) } */}
 
           </div>
         </div>
@@ -85,45 +85,41 @@ class WorkItemsTemplate extends Component {
 export default WorkItemsTemplate
 
 export const pageQuery = graphql`
-  query currentWorkQuery {
-    allWordpressWpWork {
-      edges {
-        node {
+query currentProjectQuery($id: String!) {
+    wordpressWpWork(id: { eq: $id }) {
+      id
+      title
+      slug
+      featured_media {
+        source_url
+      }
+      acf {
+        project_description
+        project_tagline
+        project_featured_image {
           id
-          title
-          slug
-          featured_media {
-            source_url
-          }
-          acf {
-            project_description
-            project_tagline
-            project_featured_image {
-              id
-              source_url
-              localFile {
-                childImageSharp {
-                  resolutions(width:1400) {
-                    src
-                    width
-                  }
-                }
+          source_url
+          localFile {
+            childImageSharp {
+              resolutions(width:1400) {
+                src
+                width
               }
             }
-            project_involvement
-            project_completion_date
-            project_link
-            project_link_title
-            section_one_gallery {
-              source_url
-              id
-              localFile {
-                childImageSharp {
-                  resolutions(width:1400) {
-                    src
-                    width
-                  }
-                }
+          }
+        }
+        project_involvement
+        project_completion_date
+        project_link
+        project_link_title
+        section_one_gallery {
+          source_url
+          id
+          localFile {
+            childImageSharp {
+              resolutions(width:1400) {
+                src
+                width
               }
             }
           }
