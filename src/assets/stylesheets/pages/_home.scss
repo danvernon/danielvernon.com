@@ -106,7 +106,12 @@
   }
 
   &-description {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
     padding: 100px 0;
-
+    
+    div {
+      padding: 0 15px;
+    }
   }
 }

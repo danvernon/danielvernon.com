@@ -9,6 +9,9 @@ class WorkItemsTemplate extends Component {
         return (
             <div>
               <div className='container'>
+                <div className='work-header'>
+
+                </div>
                 <div className='work-intro'>
 
                   <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
@@ -38,12 +41,28 @@ class WorkItemsTemplate extends Component {
               <div className='container'>
 
                 <div className='work-description'>
-
-                  { post.acf.project_description !== null &&
-                    <span className='work-header'>Project Overview</span>
-                    <p dangerouslySetInnerHTML={{ __html: post.acf.project_description }} />
-                  }
-
+                  <div>
+                    <h5 className='work-header'>Project Overview</h5>
+                    { post.acf.project_description !== null &&
+                      <p dangerouslySetInnerHTML={{ __html: post.acf.project_description }} />
+                    }
+                  </div>
+                  <div>
+                    <h5 className='work-header'>Role</h5>
+                    { post.acf.project_involvement !== null &&
+                      <p dangerouslySetInnerHTML={{ __html: post.acf.project_involvement }} />
+                    }
+                    <h5 className='work-header'>Launch Date</h5>
+                    { post.acf.project_completion_date !== null &&
+                      <p dangerouslySetInnerHTML={{ __html: post.acf.project_completion_date }} />
+                    }
+                  </div>
+                  <div>
+                    <h5 className='work-header'>Visit Site</h5>
+                    { post.acf.project_link !== null &&
+                      <a href={ post.acf.project_link } title={ post.acf.project_link_title } target='_blank'>{ post.acf.project_link_title }</a>
+                    }
+                  </div>
                 </div>
               </div>
 
