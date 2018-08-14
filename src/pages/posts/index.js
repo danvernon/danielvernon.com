@@ -4,8 +4,8 @@ import PropTypes from "prop-types"
 import Img from "gatsby-image"
 
 class PostsTemplate extends Component {
-    render() {
-        const data = this.props.data
+  render() {
+    const data = this.props.data
 
     return (
       <div>
@@ -31,35 +31,35 @@ class PostsTemplate extends Component {
 }
 
 PostsTemplate.propTypes = {
-    data: PropTypes.object.isRequired,
-    edges: PropTypes.array,
+  data: PropTypes.object.isRequired,
+  edges: PropTypes.array,
 }
 
 export default PostsTemplate
 
 export const pageQuery = graphql`
   query postsQuery{
-        allWordpressPost{
-            edges{
-                node{
-                    id
-                    title
-                    excerpt
-                    slug
-                    date(formatString: "MMMM DD, YYYY")
-                    featured_media {
-                      source_url
-                      localFile {
-                        childImageSharp {
-                          resolutions(width:300) {
-                            src
-                            width
-                          }
-                        }
-                      }
-                    }
+    allWordpressPost{
+      edges{
+        node{
+          id
+          title
+          excerpt
+          slug
+          date(formatString: "MMMM DD, YYYY")
+          featured_media {
+            source_url
+            localFile {
+              childImageSharp {
+                resolutions(width:300) {
+                  src
+                  width
                 }
+              }
             }
+          }
         }
+      }
     }
+  }
 `
