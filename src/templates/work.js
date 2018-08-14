@@ -71,7 +71,30 @@ class WorkItemsTemplate extends Component {
           </div>
           <div className='section'>
 
-            {/* { console.log(post.acf.section_one_gallery) } */}
+            { console.log(post.acf.section_one_gallery) }
+            { post.acf.section_one_gallery.map((layout, i) => {
+
+              return (
+                <div key={i}>
+                  {post.acf.section_one_gallery.map(({ picture }) => {
+
+                    if (layout.__typename === `WordPressAcf_image_gallery`) {
+
+                      const img = post.acf.section_one_gallery.source_url
+                      const id = post.acf.section_one_gallery.id
+                      return (
+                        console.log(i)
+                        // <img
+                        //   key={id}
+                        //   src={img}
+                        // />
+                      )
+                    }
+                  })}
+               </div>
+              )
+
+            })}
 
           </div>
         </div>
