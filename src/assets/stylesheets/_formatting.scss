@@ -33,7 +33,6 @@ html {
 body {
   background-color: #FFFFFF;
   text-align: left;
-  overflow-x: hidden;
   @include type-standard($color:$color-font-body, $font-weight:400);
 
   @include media-tablet() {

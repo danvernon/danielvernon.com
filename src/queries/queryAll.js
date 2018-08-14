@@ -26,6 +26,14 @@ module.exports = `
                     excerpt
                     featured_media {
                       source_url
+                      localFile {
+                        childImageSharp {
+                          resolutions(width:1000) {
+                            src
+                            width
+                          }
+                        }
+                      }
                     }
                 }
             }

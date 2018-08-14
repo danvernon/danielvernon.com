@@ -28,7 +28,8 @@ class WorkTemplate extends Component {
             <Link to={'/work/' + node.slug} key={node.id} >
               <div
                 className='post'
-                style={{ backgroundImage: `url(${node.featured_media.source_url})` }}>
+                style={{ backgroundImage: `url(${node.featured_media.localFile.childImageSharp.resolutions.src})` }}>
+
                 <div
                   className='post-hover'
                   style={{ backgroundColor: `${node.acf.hover_background_color}` }}>
@@ -55,20 +56,28 @@ export default WorkTemplate
 
 export const pageQuery = graphql`
   query workQuery{
-        allWordpressWpWork{
-            edges {
-              node {
-                  id
-                  title
-                  slug
-                  featured_media {
-                      source_url
-                  }
-                  acf {
-                    hover_background_color
-                  }
+    allWordpressWpWork{
+      edges {
+        node {
+          id
+          title
+          slug
+          featured_media {
+            source_url
+            localFile {
+              childImageSharp {
+                resolutions(width:1000) {
+                  src
+                  width
+                }
               }
             }
+          }
+          acf {
+            hover_background_color
+          }
         }
+      }
     }
+  }
 `

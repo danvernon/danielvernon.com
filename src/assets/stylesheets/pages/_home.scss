@@ -1,5 +1,6 @@
 .post {
   background-size: cover;
+  background-position: center;
   height: 400px;
   position: relative;
 
@@ -67,6 +68,10 @@
 
 .work {
 
+  &-header {
+    padding: 20px 0;
+  }
+
   &-intro {
     padding: 100px 0;
 
@@ -107,11 +112,26 @@
 
   &-description {
     display: grid;
+    font-size: 16px;
     grid-template-columns: repeat(3, auto);
+    line-height: 30px;
     padding: 100px 0;
-    
+
     div {
       padding: 0 15px;
     }
+
+    a {
+      font-size: 30px;
+    }
+  }
+
+  &-title {
+    display: block;
+    font-size: .8rem;
+    line-height: 2.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 5px;
   }
 }
