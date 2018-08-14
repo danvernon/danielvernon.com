@@ -3,8 +3,8 @@ import Link from "gatsby-link"
 import PropTypes from "prop-types"
 
 class WorkTemplate extends Component {
-    render() {
-        const data = this.props.data
+  render() {
+    const data = this.props.data
 
     return (
       <div>
@@ -48,8 +48,8 @@ class WorkTemplate extends Component {
 }
 
 WorkTemplate.propTypes = {
-    data: PropTypes.object.isRequired,
-    edges: PropTypes.array,
+  data: PropTypes.object.isRequired,
+  edges: PropTypes.array,
 }
 
 export default WorkTemplate

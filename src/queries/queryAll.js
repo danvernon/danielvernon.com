@@ -60,6 +60,17 @@ module.exports = `
                         project_completion_date
                         project_link
                         project_link_title
+                        section_one_gallery {
+                          id
+                          localFile {
+                            childImageSharp {
+                              resolutions(width:1400) {
+                                src
+                                width
+                              }
+                            }
+                          }
+                        }
                     }
                 }
             }
