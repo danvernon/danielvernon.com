@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 import Header from '../components/header'
-import MainMenu from '../components/menu/mainmenu'
+import MainMenu from '../components/mainmenu'
 import '../assets/stylesheets/styles.scss'
 
 const TemplateWrapper = ({ children, data }) => (
