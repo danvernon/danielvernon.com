@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import Header from '../components/Header'
-import MainMenu from '../components/Menu/MainMenu'
+import Header from '../components/header'
+import MainMenu from '../components/menu/mainmenu'
 import './index.scss'
 
 const TemplateWrapper = ({ children, data }) => (
@@ -24,7 +24,7 @@ const TemplateWrapper = ({ children, data }) => (
         paddingTop: 0,
       }}
     >
-      <MainMenu menu={data}/>
+      {/* <MainMenu menu={data}/> */}
       {children()}
     </div>
   </div>

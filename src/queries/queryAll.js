@@ -36,7 +36,6 @@ module.exports = `
                 node {
                     id
                     title
-
                     slug
                     featured_media {
                         source_url

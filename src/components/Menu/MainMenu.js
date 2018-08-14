@@ -3,9 +3,7 @@ import Link from "gatsby-link"
 
 class MainMenu extends Component {
     render() {
-
         const data = this.props.menu.allWordpressWpApiMenusMenusItems.edges[0].node.items
-        console.log(data)
 
         return (
             <div>
