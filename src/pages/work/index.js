@@ -5,24 +5,42 @@ import PropTypes from "prop-types"
 class WorkTemplate extends Component {
     render() {
         const data = this.props.data
-        console.log(data.allWordpressWpWork.edges)
 
     return (
       <div>
 
-        <h1>Posts</h1>
-
-        {data.allWordpressWpWork.edges.map(({node}) => (
-
-          <div key={node.id} className='post' style={{ marginBottom: 50 }}>
-            <Link to={'/work/' + node.slug}>
-              <h3>{node.title}</h3>
-              <img src={node.featured_media.source_url} />
-            </Link>
+        <div className='container'>
+          <div className='post-intro'>
+            <p className='post-text'>
+              A multidisciplinary designer working with companies to better their digital presence.
+              Some of those companies include CBRE, Halfords, KICCA, A Plus and Tifosy.
+            </p>
+            <p className='post-text'>
+              Currently building Draft, but available to take on new projects.
+            </p>
           </div>
+        </div>
 
-        ))}
+        <div className='post-container'>
 
+          {data.allWordpressWpWork.edges.map(({node}) => (
+
+            <Link to={'/work/' + node.slug} key={node.id} >
+              <div
+                className='post'
+                style={{ backgroundImage: `url(${node.featured_media.source_url})` }}>
+                <div
+                  className='post-hover'
+                  style={{ backgroundColor: `${node.acf.hover_background_color}` }}>
+                  <h3>{node.title}</h3>
+                </div>
+              </div>
+
+            </Link>
+
+          ))}
+
+        </div>
       </div>
     )
   }
@@ -45,6 +63,9 @@ export const pageQuery = graphql`
                   slug
                   featured_media {
                       source_url
+                  }
+                  acf {
+                    hover_background_color
                   }
               }
             }

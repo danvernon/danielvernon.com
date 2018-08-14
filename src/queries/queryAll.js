@@ -40,6 +40,19 @@ module.exports = `
                     featured_media {
                         source_url
                     }
+                    acf {
+                        hover_background_color
+                        project_description
+                        project_tagline
+                        project_featured_image {
+                            id
+                            source_url
+                        }
+                        project_involvement
+                        project_completion_date
+                        project_link
+                        project_link_title
+                    }
                 }
             }
         }

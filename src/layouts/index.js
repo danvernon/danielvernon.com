@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 
 import Header from '../components/header'
 import MainMenu from '../components/menu/mainmenu'
-import './index.scss'
+import '../assets/stylesheets/styles.scss'
 
 const TemplateWrapper = ({ children, data }) => (
   <div>
@@ -16,14 +16,7 @@ const TemplateWrapper = ({ children, data }) => (
       ]}
     />
     <Header />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
+    <div>
       {/* <MainMenu menu={data}/> */}
       {children()}
     </div>

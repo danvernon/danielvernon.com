@@ -5,15 +5,48 @@ import Img from "gatsby-image"
 class WorkItemsTemplate extends Component {
     render() {
         const post = this.props.data.allWordpressWpWork.edges[0].node
-        console.log(this.props.data.allWordpressWpWork.edges[0].node)
 
         return (
             <div>
-              <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
-              <div dangerouslySetInnerHTML={{ __html: post.content }} />
-              <img src={post.featured_media.source_url} />
+              <div className='container'>
+                <div className='work-intro'>
 
-              Title
+                  <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
+
+                  { post.acf.project_tagline !== null &&
+                    <p>
+                      { post.acf.project_tagline }
+                    </p>
+                  }
+
+                </div>
+              </div>
+
+              { post.acf.project_featured_image !== null &&
+
+                <div className='work-image-container'>
+                  <div
+                    className='work-image'
+                    style={{ backgroundImage: `url(${post.acf.project_featured_image.source_url})` }}
+                  >
+
+                  </div>
+                </div>
+
+              }
+
+              <div className='container'>
+
+                <div className='work-description'>
+
+                  { post.acf.project_description !== null &&
+                    <span className='work-header'>Project Overview</span>
+                    <p dangerouslySetInnerHTML={{ __html: post.acf.project_description }} />
+                  }
+
+                </div>
+              </div>
+
             </div>
         )
     }
@@ -32,6 +65,18 @@ export const pageQuery = graphql`
                     slug
                     featured_media {
                         source_url
+                    }
+                    acf {
+                        project_description
+                        project_tagline
+                        project_featured_image {
+                            id
+                            source_url
+                        }
+                        project_involvement
+                        project_completion_date
+                        project_link
+                        project_link_title
                     }
                 }
             }

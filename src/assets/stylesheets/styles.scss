@@ -1,0 +1,87 @@
+/**
+ * SITE
+ * --
+ * Contains all CSS used to format the website. Styles are broken up into
+ * multiple, more manageable files and imported into this stylesheet using SASS.
+ */
+
+
+@charset 'UTF-8';
+
+/**
+ * Local mixins
+ * --
+ * Snippets of reuseable code that aren't specific to a single class. Mixins can
+ * be customised by sending parameters through to them.
+ */
+@import 'mixins/clearfix';
+@import 'mixins/ellipsis';
+
+
+/**
+ * Site
+ * --
+ * General stylesheets and styles that are used across the entire website to
+ * format all/most pages.
+ */
+@import 'fonts';
+@import 'settings';
+@import 'reset';
+@import 'formatting';
+
+
+/**
+ * Vendor libraries
+ * --
+ * Useful SASS libraries and mixins that can be imported and used locally
+ * written by external resources.
+ */
+// @import '~slick-carousel/slick/slick.css';
+// @import '~slick-carousel/slick/slick-theme.css';
+// @import 'vendor/slick';
+
+
+/**
+ * Layouts
+ * --
+ * General stylesheets that are used across the entire website to format
+ * all/most pages.
+ */
+// @import 'layouts/scaffolding';
+// @import 'layouts/header';
+// @import 'layouts/searchcard';
+// @import 'layouts/footer';
+
+
+/**
+ * Components
+ * --
+ * Single purpose stylesheets used for individual components/element blocks on
+ * the page that are flexible enough to be re-used across multiple pages.
+ */
+// @import 'components/buttons';
+// @import 'components/carousel';
+// @import 'components/dropdown';
+// @import 'components/forms';
+// @import 'components/modals';
+
+
+/**
+ * Pages
+ * --
+ * Stylesheets that are specific to a single page or group of pages.
+ */
+ @import 'pages/home';
+ // @import 'pages/activity';
+ // @import 'pages/agencies';
+ // @import 'pages/app';
+ // @import 'pages/core';
+ // @import 'pages/index';
+ // @import 'pages/jobs';
+ // @import 'pages/messages';
+ // @import 'pages/notifications';
+ // @import 'pages/onboarding';
+ // @import 'pages/professionals';
+ // @import 'pages/profile';
+ // @import 'pages/pricing';
+ // @import 'pages/review';
