@@ -7,6 +7,8 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'url-loader',
     'gatsby-plugin-sass',
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
     	resolve: 'gatsby-source-contentful',
     	options: {
